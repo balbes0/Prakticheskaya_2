@@ -65,18 +65,22 @@ class Program
 
     static void tablica()
     {
-        int rows = 10;
-        int columns = 10;
-
-        Console.WriteLine("Таблица умножения");
-
-        for (int i = 1; i <= rows; i++)
+        int[,] tablicca = new int[10, 10];
+        for (int i = 1; i <= 10; i++)
         {
-            for (int j = 1; j <= columns; j++)
+            for (int j = 1; j <= 10; j++)
             {
-                Console.Write($"{i * j,4}");
+                tablicca[i - 1, j - 1] = i * j;
             }
-            Console.WriteLine();
+        }
+
+        for (int i = 0; i < 9; i++)
+        {
+            for (int j = 0; j < 9; j++)
+            {
+                Console.Write($"{tablicca[i, j]}\t");
+            }
+        Console.WriteLine();
         }
     }
 
